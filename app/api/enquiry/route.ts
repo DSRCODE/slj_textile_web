@@ -25,15 +25,13 @@ export async function POST(request: NextRequest) {
       createdAt: Timestamp.now(),
     });
 
-    // 2. Send email - FIXED: createTransport (not createTransporter)
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 587,
       secure: false,
       auth: {
         user: "shubhambagra2002@gmail.com",
-        // pass: process.env.GMAIL_APP_PASSWORD!,
-        pass: "gawk rjwf rlyy cxnc",
+        pass: process.env.GMAIL_APP_PASSWORD!,
       },
     });
 
