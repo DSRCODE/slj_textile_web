@@ -95,7 +95,8 @@ export default function ContactPage() {
                 <div>
                   <p className="font-medium text-gray-900">Address</p>
                   <p className="text-gray-600 text-sm">
-                    Industrial Area, Alwar, Rajasthan – 301001
+                    SLJ TEXTILES - 174/132, Sector 17, Pratap Nagar, Jaipur,
+                    Rajasthan 302033
                   </p>
                 </div>
               </div>
@@ -104,7 +105,7 @@ export default function ContactPage() {
                 <Phone className="w-6 h-6 text-amber-600 mt-1" />
                 <div>
                   <p className="font-medium text-gray-900">Phone</p>
-                  <p className="text-gray-600 text-sm">+91 98765 43210</p>
+                  <p className="text-gray-600 text-sm">+91 78919 63392</p>
                 </div>
               </div>
 
@@ -112,7 +113,7 @@ export default function ContactPage() {
                 <Mail className="w-6 h-6 text-amber-600 mt-1" />
                 <div>
                   <p className="font-medium text-gray-900">Email</p>
-                  <p className="text-gray-600 text-sm">hello@sljtextiles.com</p>
+                  <p className="text-gray-600 text-sm">shreelj2025@gmail.com</p>
                 </div>
               </div>
             </div>

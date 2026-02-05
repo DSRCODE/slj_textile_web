@@ -4,43 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// Dummy Product Data
-const product = {
-  name: "Custom Corporate T‑Shirt",
-  category: "Printing & Apparel",
-  description:
-    "Premium quality corporate t‑shirts designed for comfort, durability, and brand visibility. Suitable for bulk orders, uniforms, and promotional use.",
-  variants: [
-    {
-      id: 1,
-      name: "Cotton – White",
-      image: "/p1.jpg",
-      details:
-        "100% combed cotton, breathable fabric, ideal for daily corporate use.",
-    },
-    {
-      id: 2,
-      name: "Cotton – Black",
-      image: "/p2.jpeg",
-      details:
-        "High GSM cotton with long‑lasting color retention and premium finish.",
-    },
-    {
-      id: 3,
-      name: "Poly‑Cotton – Grey",
-      image: "/p3.webp",
-      details:
-        "Wrinkle‑resistant poly‑cotton blend suitable for industrial usage.",
-    },
-  ],
-  specs: [
-    "Available Sizes: S to XXL",
-    "Printing: DTG / DTF / Screen",
-    "Minimum Order: 50 pieces",
-    "Delivery: Pan‑India",
-  ],
-};
-
 export default function ProductDetailClient({ product }: { product: any }) {
   const [activeVariant, setActiveVariant] = useState(product.variants[0]);
 
@@ -96,7 +59,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
                 Variants
               </h3>
               <div className="flex flex-wrap gap-3">
-                {product.variants.map((variant:any) => (
+                {product.variants.map((variant: any) => (
                   <button
                     key={variant.id}
                     onClick={() => setActiveVariant(variant)}
@@ -122,7 +85,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
                 Specifications
               </h3>
               <ul className="space-y-2 text-gray-600 text-sm">
-                {product.specs.map((item:any, index:any) => (
+                {product.specs.map((item: any, index: any) => (
                   <li key={index}>• {item}</li>
                 ))}
               </ul>

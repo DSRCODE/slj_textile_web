@@ -43,10 +43,10 @@ export default function EnquiryModal({
   };
 
   // Submit form using API helper
+  // Replace this OLD handleSubmit:
   const handleSubmit = async () => {
     const { name, contact, address, city, state, email } = enquiryForm;
 
-    // Validate required fields
     if (!name || !contact || !address || !city || !state) {
       alert("Please fill all required fields.");
       return;
@@ -55,31 +55,44 @@ export default function EnquiryModal({
     setSubmitting(true);
 
     try {
-      await submitEnquiry({
-        name,
-        email,
-        contact,
-        address,
-        city,
-        state,
-        product,
+      const response = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: enquiryForm.name,
+          email: enquiryForm.email,
+          contact: enquiryForm.contact,
+          address: enquiryForm.address,
+          city: enquiryForm.city,
+          state: enquiryForm.state,
+          product: {
+            name: product.name,
+            categoryName: product.categoryName,
+          },
+        }),
       });
 
-      setSuccess(true);
-      setEnquiryForm({
-        name: "",
-        email: "",
-        contact: "",
-        address: "",
-        city: "",
-        state: "",
-      });
+      const result = await response.json();
 
-      // Close modal after 2s
-      setTimeout(() => {
-        onClose();
-        setSuccess(false);
-      }, 2000);
+      if (result.success) {
+        setSuccess(true);
+        setEnquiryForm({
+          name: "",
+          email: "",
+          contact: "",
+          address: "",
+          city: "",
+          state: "",
+        });
+
+        // Close modal after 2s
+        setTimeout(() => {
+          onClose();
+          setSuccess(false);
+        }, 2000);
+      } else {
+        alert("❌ Submission failed. Please try again.");
+      }
     } catch (error) {
       console.error(error);
       alert("Something went wrong. Please try again.");

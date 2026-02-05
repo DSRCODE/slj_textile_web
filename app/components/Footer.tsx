@@ -10,11 +10,10 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-3 mb-6">
             <Image src={"/logo.png"} alt="SLJ Textile" width={60} height={80} />
-            <h3 className="text-3xl font-semibold text-white">SLJ Textile</h3>
+            <h3 className="text-2xl font-semibold text-white">SLJ TEXTILES </h3>
           </div>
           <p className="text-sm leading-7 text-gray-300 max-w-sm">
-            Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam
-            nonumy
+            174/132, Sector 17, Pratap Nagar, Jaipur, Rajasthan 302033
           </p>
           <div className="flex gap-4 mt-6">
             <SocialIcon>
@@ -63,14 +62,16 @@ export default function Footer() {
           <h4 className="text-xl font-medium text-[#cbb58b] mb-6">Contact</h4>
           <ul className="space-y-5 text-sm">
             <li className="flex items-center gap-3">
-              <Phone size={16} className="text-[#cbb58b]" /> (205) 555-0100
+              <Phone size={16} className="text-[#cbb58b]" />
+              +91 78919 63392
             </li>
             <li className="flex items-center gap-3">
               <Clock size={16} className="text-[#cbb58b]" /> Mon - Fri : 9 am -
               11 pm
             </li>
             <li className="flex items-center gap-3">
-              <Mail size={16} className="text-[#cbb58b]" /> email@cottone.com
+              <Mail size={16} className="text-[#cbb58b]" />{" "}
+              shreelj2025@gmail.com
             </li>
           </ul>
         </div>
@@ -79,7 +80,8 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300 gap-4">
-          <p>Copyright © 2022 SLJ Textiles</p>
+          <p>Copyright © {new Date().getFullYear()} SLJ Textiles</p>
+
           <div className="flex gap-6">
             <Link href="/terms-conditions">Terms & Conditions</Link>
             <span>|</span>

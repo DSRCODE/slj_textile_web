@@ -1,3 +1,4 @@
+import { NextRequest, NextResponse } from "next/server";
 import {
   collection,
   getDocs,
@@ -10,6 +11,19 @@ import {
   Timestamp,
 } from "firebase/firestore";
 import { db } from "./firebase";
+
+interface EnquiryData {
+  name: string;
+  email: string;
+  contact: string;
+  address: string;
+  city: string;
+  state: string;
+  product: {
+    name: string;
+    categoryName: string;
+  };
+}
 
 export const getProducts = async () => {
   const q = query(collection(db, "products"), orderBy("createdAt", "desc"));
@@ -85,6 +99,7 @@ export const getCMSContentBySlug = async (slug: string) => {
     updatedAt: docData.updatedAt?.toDate?.() || null,
   };
 };
+
 
 export const submitEnquiry = async (data: any) => {
   return await addDoc(collection(db, "enquiries"), {
